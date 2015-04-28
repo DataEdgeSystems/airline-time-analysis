@@ -53,9 +53,8 @@ def main():
     x = np.arange( len(y) )
 
     plt.bar(x, y, width=.5, color='maroon', edgecolor='none')
-"""
     plt.savefig("../../plots/histogram_incoming_delays.png")
-
+"""
     fig, ax = plt.subplots()
 
     fig.set_size_inches(10,6)
