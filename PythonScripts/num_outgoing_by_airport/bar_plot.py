@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-This script generates the bar plot for the top 20 airports with the most incoming flights
+This script generates the bar plot for the top 20 airports with the most outgoing flights
 
 @author Luigi Patruno
 @date 28 Apr 2015
@@ -16,9 +16,9 @@ def main():
 
     import matplotlib.pyplot as plt
 
-    file_path = '../../data/num_incoming_by_airport/top_20_incoming'
+    file_path = '../../data/num_outgoing_by_airport/top_20_outgoing'
 
-    # DataFrame object containing the top 20 airports with most incoming flights
+    # DataFrame object containing the top 20 airports with most outgoing flights
     df = pd.read_csv(file_path, sep='\t', header=None)
 
     x = np.arange(20)
@@ -29,7 +29,7 @@ def main():
 
     fig.set_size_inches(10,6)
 
-    plt.title('Top 20 Airports by Number of Incoming Flights')
+    plt.title('Top 20 Airports by Number of Outgoing Flights')
     
     plt.xticks( x + .25, x_labels, rotation=75)
     plt.xlim([min(x) - .5, max(x) + 1])
@@ -46,7 +46,7 @@ def main():
 
     plt.bar(x, y, width=.5, color='maroon', edgecolor='none')
 
-    plt.savefig("../../plots/top_20_incoming.png")
+    plt.savefig("../../plots/top_20_outgoing.png")
 
 if __name__ == '__main__':
     main()
