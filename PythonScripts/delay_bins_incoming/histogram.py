@@ -45,6 +45,7 @@ def main():
 	    pass
 
     for k in sorted(bins.keys()):
+        print k, bins[k]
         label = '%d_%d' % (k*30, k * 30 + 30)
 	x_labels.append( label )
         y.append( bins[k] )
@@ -55,7 +56,7 @@ def main():
 
     fig, ax = plt.subplots()
 
-    fig.set_size_inches(10,6)
+    #fig.set_size_inches(10,6)
 
     plt.title('Arrival Delays for Incoming Flights')
     
