@@ -22,14 +22,40 @@ def main():
     df = pd.read_csv(file_path, sep='\t', header=None)
     df = df.sort(0)
 
-    x = np.arange( df.shape[0] )
-    x_labels = df[0].values
-    y = df[1].values
+    bins = {}
+    x_labels = []
+    y = []
+
+    for i in range( df.shape[0] ):
+        try:
+            delay = int( df.iloc[i][0] )
+            if delay < 0:
+                delay = abs( delay )	    
+	        mod = delay % 30
+	        key = (int( (delay - mod) / 30 ) * -1) - 1 #Excuse this stupid additive factor
+            else:
+                mod = delay % 30
+                key = int( (delay - mod) / 30 )
+	        #key = '%d_%d' % (quotient*30, (quotient*30)+30)
+	    if key in bins:
+	        bins[key] += int( df.iloc[i][1] )
+	    else:
+	        bins[key] = int( df.iloc[i][1] )
+        except:
+	    pass
+
+    for k in sorted(bins.keys()):
+        label = '%d_%d' % (k*30, k * 30 + 30)
+	x_labels.append( label )
+        y.append( bins[k] )
+
+
+    x = np.arange( len(y) )
 
     plt.bar(x, y, width=.5, color='maroon', edgecolor='none')
-
-    plt.savefig("../../plots/histogram_incoming_delays.png")
 """
+    plt.savefig("../../plots/histogram_incoming_delays.png")
+
     fig, ax = plt.subplots()
 
     fig.set_size_inches(10,6)
