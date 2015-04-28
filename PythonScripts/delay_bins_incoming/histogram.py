@@ -57,12 +57,11 @@ def main():
 
     fig.set_size_inches(10,6)
 
-    plt.title('Arrival Delays for Incoming Flights')
+    plt.title('Arrival Delays for Incoming Flights (binned by half hour)')
     
     plt.xticks( x + .25, x_labels, rotation=40)
     plt.xlim([min(x) - .5, max(x) + 1])
     plt.setp(ax.get_xticklabels(), rotation='vertical', fontsize=7)
-    plt.xlabel('Minute bins')
 
     # Hide the right and top spines
     ax.spines['right'].set_visible(False)
