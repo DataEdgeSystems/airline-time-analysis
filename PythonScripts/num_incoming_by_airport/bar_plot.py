@@ -25,7 +25,25 @@ def main():
     x_labels = df[0].values
     y = df[1].values
 
-    plt.bar(x, y)
+    fig, ax = plt.subplots()
+
+    fig.set_size_inches(10,6)
+
+    plt.title('Top 20 Airports by Number of Incoming Flights')
+    plt.xlim([min(x) - .5, max(x) + 1])
+
+    # Hide the right and top spines
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.spines['left'].set_color('gray') 
+    ax.spines['bottom'].set_color('gray') 
+    
+    # Hide tick marks
+    ax.yaxis.set_ticks_position('none')
+    ax.xaxis.set_ticks_position('none')
+
+    plt.bar(x, y, width=.5, color='maroon', edgecolor='none')
+
     plt.savefig("../../plots/top_20_incoming.png")
 
 if __name__ == '__main__':
