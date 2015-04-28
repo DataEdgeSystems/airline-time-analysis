@@ -31,7 +31,7 @@ def main():
 
     plt.title('Top 20 Airports by Number of Incoming Flights')
     
-    plt.xticks( x + .25, x_labels )
+    plt.xticks( x + .25, x_labels, rotation=75)
     plt.xlim([min(x) - .5, max(x) + 1])
 
     # Hide the right and top spines
