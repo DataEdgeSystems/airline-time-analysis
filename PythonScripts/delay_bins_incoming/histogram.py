@@ -52,14 +52,12 @@ def main():
 
     x = np.arange( len(y) )
 
-    plt.bar(x, y, width=.5, color='maroon', edgecolor='none')
-    plt.savefig("../../plots/histogram_incoming_delays.png")
-"""
+
     fig, ax = plt.subplots()
 
     fig.set_size_inches(10,6)
 
-    plt.title('Top 20 Airports by Number of Incoming Flights')
+    plt.title('Arrival Delays for Incoming Flights')
     
     plt.xticks( x + .25, x_labels, rotation=75)
     plt.xlim([min(x) - .5, max(x) + 1])
@@ -76,7 +74,7 @@ def main():
 
     plt.bar(x, y, width=.5, color='maroon', edgecolor='none')
     plt.savefig("../../plots/histogram_incoming_delays.png")
-"""
+
 
 if __name__ == '__main__':
     main()
