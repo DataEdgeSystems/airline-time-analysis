@@ -44,7 +44,7 @@ def main():
     ax.yaxis.set_ticks_position('none')
     ax.xaxis.set_ticks_position('none')
 
-    plt.bar(x, y, width=.5, color='maroon', edgecolor='none')
+    plt.bar(x, y, width=.5, color='navy', edgecolor='none')
 
     plt.savefig("../../plots/top_20_outgoing.png")
 
