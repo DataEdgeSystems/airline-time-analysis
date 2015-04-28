@@ -61,7 +61,7 @@ def main():
     
     plt.xticks( x + .25, x_labels, rotation=40)
     plt.xlim([min(x) - .5, max(x) + 1])
-    plt.setp(ax.get_xticklabels(), rotation='vertical', fontsize=8)
+    plt.setp(ax.get_xticklabels(), rotation='vertical', fontsize=7)
 
     # Hide the right and top spines
     ax.spines['right'].set_visible(False)
